@@ -20,23 +20,25 @@ The function we need to use is called resample.
 """
 
 from dipy.align.reslice import reslice
-from dipy.data import get_data
+#from dipy.data import get_data
 
 """
 We use here a very small dataset to show the basic principles but you can
 replace the following line with the path of your image.
 """
+data_path = '/N/u/zhangjac/Karst/Dipy/data/Diffusion7T'
+data_file = data_path + 'data.nii.gz'
 
-fimg = get_data('aniso_vox')
 
 """
 We load the image and print the shape of the volume
 """
 
-img = nib.load(fimg)
+img = nib.load(data_file)
 data = img.get_data()
 data.shape
 
+##
 """
 ``(58, 58, 24)``
 
@@ -45,6 +47,7 @@ which maps image coordinates to world (mm) coordinates.
 """
 
 affine = img.get_affine()
+#deprecated
 
 """
 Load and show the zooms which hold the voxel size.
