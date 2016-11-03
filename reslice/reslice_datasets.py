@@ -26,7 +26,7 @@ from dipy.align.reslice import reslice
 We use here a very small dataset to show the basic principles but you can
 replace the following line with the path of your image.
 """
-data_path = '/N/u/zhangjac/Karst/Dipy/data/Diffusion7T'
+data_path = '/N/dc2/projects/lifebid/pypi/Copied_hcp_data/Diffusion7T/'
 data_file = data_path + 'data.nii.gz'
 
 

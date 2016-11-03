@@ -38,8 +38,8 @@ import nibabel as nib
 import numpy as np
 from dipy.denoise.noise_estimate import piesno
 
-data_path = '/N/dc2/projects/lifebid/HCP7/109123/diffusion_data/'
-data_file = data_path + 'data_b1000.nii.gz'
+data_path = '/N/dc2/projects/lifebid/pypi/Copied_hcp_data/Diffusion7T/'
+data_file = data_path + 'data.nii.gz'
 
 img = nib.load(data_file) 
 data = img.get_data()
