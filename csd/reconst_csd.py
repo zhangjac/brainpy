@@ -21,14 +21,23 @@ with b-value 2000.
 """
 
 import numpy as np
+import nibabel as nib
+from dipy.core.gradients import gradient_table #added for gtab
 
-from dipy.data import fetch_stanford_hardi, read_stanford_hardi
 
-fetch_stanford_hardi()
-img, gtab = read_stanford_hardi()
+data_path = '/N/dc2/projects/lifebid/pypi/Copied_hcp_data/Diffusion7T/'
+data_file = data_path + 'data.nii.gz'
+data_bvec = data_path + 'data_b1000.bvecs'
+data_bval = data_path + 'data_b1000.bvals'
+
+
+img = nib.load(data_file)
 
 data = img.get_data()
 
+bvals = np.loadtxt(data_bval, delimiter=',')
+bvecs = np.loadtxt(data_bvec, delimiter=',')
+gtab = gradient_table(bvals, bvecs)
 """
 You can verify the b-values of the datasets by looking at the attribute
 `gtab.bvals`.
