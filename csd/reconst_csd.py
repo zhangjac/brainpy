@@ -25,8 +25,8 @@ import nibabel as nib
 from dipy.core.gradients import gradient_table #added for gtab
 
 
-data_path = '/N/dc2/projects/lifebid/pypi/Copied_hcp_data/Diffusion7T/'
-data_file = data_path + 'data.nii.gz'
+data_path = '/N/dc2/projects/lifebid/HCP7/109123/diffusion_data/'
+data_file = data_path + 'data_b1000.nii.gz'
 data_bvec = data_path + 'data_b1000.bvecs'
 data_bval = data_path + 'data_b1000.bvals'
 
